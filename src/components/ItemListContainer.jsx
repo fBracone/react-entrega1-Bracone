@@ -1,7 +1,9 @@
+import ItemCount from './ItemCount'
 const ItemListContainer = ({greeting}) =>{
     return(
-        <div className="mx-auto max-w-7xl px-6 py-3 lg:px-8">
+        <div className="container pt-3">
             {greeting}
+            <ItemCount startCount={1} stock={10} />
         </div>
     )
 }
