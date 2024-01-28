@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Gorra Truchan",
+    "category": "gorras",
+    "description": "Es una gorra trucha.",
+    "price": 3200,
+    "stock": 13,
+    "imgScr": "https://acdn.mitiendanube.com/stores/001/338/510/products/cap_babolat_basic_logo_black_11-e4e0e3dc366f0fa9b616352584201616-480-0.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Gorra Mega",
+    "category": "gorras",
+    "description": "Es una gorra MEGA trucha.",
+    "price": 2200,
+    "stock": 0,
+    "imgScr": "https://cheapdopepunx.com/cdn/shop/products/2a031fca83f5f7a1fc415b644cfa5c97.jpg?v=1681451219&width=1946"
+  },
+  {
+    "id": 3,
+    "name": "Reloj Otro",
+    "category": "otros",
+    "description": "Es otra cosa, un reloj.",
+    "price": 1200,
+    "stock": 19,
+    "imgScr": "https://http2.mlstatic.com/D_NQ_NP_692399-MLU70649175111_072023-O.webp"
+  },
+  {
+    "id": 4,
+    "name": "Riñonera ",
+    "category": "rinoneras",
+    "description": "Riñonera canchera y trucha.",
+    "price": 5400,
+    "stock": 11,
+    "imgScr": "https://abaco.la/wp-content/uploads/2022/10/rinonera-preto-black-s.jpg"
+  }
+]

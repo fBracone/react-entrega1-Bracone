@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const NavList = () =>{
     return(
         <>
@@ -7,13 +8,13 @@ const NavList = () =>{
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Home</a>
+                        <Link className="nav-link" to={"/category/gorras"}>Gorras</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Link</a>
+                        <Link className="nav-link" to={"/category/rinoneras"}>Riñoneras</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" >Disabled</a>
+                        <Link className="nav-link" to={"/category/otros"}>Otras cosas</Link>
                     </li>
                 </ul>
             </div>
