@@ -2,11 +2,12 @@ import ItemCount from "./ItemCount"
 import { Link } from "react-router-dom";
 
 const ItemDetail = ({item}) =>{
+
     return(
         <div className="card border-primary ">
             <div className="row g-0 ">
                 <div className="col-md-4 d-flex">
-                    <img src={item.imgScr} className="img-fluid rounded-start" alt={item.name}/>
+                    <img src={item.imgSrc} className="img-fluid rounded-start" alt={item.name}/>
                 </div>
                 <div className="col-md-8 d-flex flex-column">
                     <div className="card-body text-bg-light">
@@ -25,7 +26,7 @@ const ItemDetail = ({item}) =>{
                         <p className="card-text">{item.description}</p>
                     </div>
                     <div className="card-footer text-bg-light " >
-                        <ItemCount stock={item.stock} /> 
+                        <ItemCount item={item}/> 
                     </div>
                 </div>
             </div>

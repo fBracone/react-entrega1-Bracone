@@ -1,28 +1,30 @@
 import ItemList from './ItemList';
-import itemsArray from '../fakeDB.json';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loading from './Loading';
+import Error404 from './Error404';
+import { getDocuments } from './services/firebase';
 
 const ItemListContainer = () =>{
+    const [loading, setLoading] = useState(true);
     const [items, setItems]= useState ([]);
     const {id} = useParams();
 
-    useEffect(() => {
-        const fakeFetch = new Promise(resolve => {
-            setTimeout(() => {
-                resolve(id ? itemsArray.filter(item => item.category == id ) : itemsArray);
-
-            }, 1000);
-        })
-        fakeFetch.then(data => {
-            setItems(data);
-        })
-    }, [id]);
-
+    useEffect(()=>{
+        setLoading(true);
+        getDocuments("items",id)
+        .then(res => {
+            setItems(res)
+            setLoading(false)
+        });              
+    },[id]);
 
     return(
         <div className="container pt-3">
-            <ItemList items={items}/>
+        {loading? <Loading/> : 
+        items.length==0? 
+        <Error404/> : <ItemList items={items}/>
+        }
         </div>
     )
 }

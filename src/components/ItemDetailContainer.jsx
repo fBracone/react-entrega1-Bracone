@@ -1,41 +1,28 @@
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-import itemsArray from '../fakeDB.json';
 import ItemDetail from "./ItemDetail";
-
-const errorId =   {
-    "id": "",
-    "name": "Producto Inexistente",
-    "category": "",
-    "description": "",
-    "price": "",
-    "stock": 0,
-    "imgScr": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdnviQh7zw3cPSUP-BlniN2eoS3H9dRHUuw&usqp=CAU"
-  };
+import Loading from "./Loading";
+import { getOneDocument} from './services/firebase';
 
 const ItemDetailContainer = () =>{
+    const [loading, setLoading] = useState(true);
     const {id} = useParams();
 
     const [item,setItem] = useState([]);
-    useEffect(()=>{
-        let product = itemsArray.find(item => item.id==id)
-        const promise = new Promise(resolve =>{
-            setTimeout(()=>{
-                resolve(product);
-            },500);
-        })
-        promise.then(data =>{
-            setItem(data);
-        })
-    }, [id]);
 
-    if(item==undefined){
-        setItem(errorId);
-    }
+    useEffect(()=>{
+        getOneDocument("items",id)
+        .then(res => {
+            setItem(res)
+            setLoading(false)
+        });
+    },[id])
+
 
     return(
         <div className="container mt-3">
-        <ItemDetail item={item}/>
+            {loading? <Loading/> :     
+            <ItemDetail item={item}/>}
         </div>
     )
 }

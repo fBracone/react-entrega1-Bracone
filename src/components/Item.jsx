@@ -4,7 +4,7 @@ const Item =({item})=>{
     return(
         <div className="col-12 col-md-6 col-xl-4 mb-4 d-flex">
             <div className="card border-primary shadow">
-                <img src={item.imgScr} className="card-img-top border-bottom border-1 border-secondary-subtle" alt={item.name}/>
+                <img src={item.imgSrc} className="card-img-top border-bottom border-1 border-secondary-subtle" alt={item.name}/>
                 <div className="card-body text-bg-light">
                     <h5 className="card-title fs-3 ">{item.name}</h5>
                     <hr className="my-1"/>
