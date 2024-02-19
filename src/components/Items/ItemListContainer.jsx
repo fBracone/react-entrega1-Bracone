@@ -1,9 +1,9 @@
 import ItemList from './ItemList';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Loading from './Loading';
-import Error404 from './Error404';
-import { getDocuments } from './services/firebase';
+import Loading from '../Loading';
+import Error404 from '../Error404';
+import { getDocuments } from '../../services/firebase';
 
 const ItemListContainer = () =>{
     const [loading, setLoading] = useState(true);

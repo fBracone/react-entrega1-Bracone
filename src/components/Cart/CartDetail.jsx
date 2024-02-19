@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { CartContext } from "./context/CartContext";
 import { collection, getFirestore } from "firebase/firestore";
-import FormComponent from "./FormComponent/FormComponent";
+import FormComponent from "../FormComponent/FormComponent";
 
 const CartDetail = () => {
     const [buyer, setBuyer]= useState({

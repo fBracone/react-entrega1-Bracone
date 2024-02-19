@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState} from "react";
-import { CartContext } from "./context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
 const CartItemCount =({item})=>{
     const stock=item.stock;

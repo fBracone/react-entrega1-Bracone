@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import ItemListContainer from './ItemListContainer.jsx'
-import Error404 from './Error404.jsx'
-import ItemDetailContainer from './ItemDetailContainer.jsx'
-import Cart from './Cart.jsx'
+import ItemListContainer from '../components/Items/ItemListContainer.jsx'
+import Error404 from '../components/Error404.jsx'
+import ItemDetailContainer from '../components/Items/ItemDetailContainer.jsx'
+import Cart from '../components/Cart/Cart.jsx'
 
 const RoutesComponent = () =>{
     return(

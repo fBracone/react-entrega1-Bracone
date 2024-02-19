@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import Brand from "./Brand";
+import Brand from "../Brand";
 import CartWidget from "./CartWidget";
 import NavList from "./NavList";
 

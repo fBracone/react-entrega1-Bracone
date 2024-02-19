@@ -1,7 +1,5 @@
 import {collection, getDocs, getFirestore, query, where, doc, getDoc} from 'firebase/firestore';
 
-
-
 const getDocuments =(collName, filter)=>{
     const db = getFirestore();
     const collRef = collection(db,collName);
