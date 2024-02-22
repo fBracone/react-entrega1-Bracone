@@ -1,4 +1,4 @@
-import {collection, getDocs, getFirestore, query, where, doc, getDoc} from 'firebase/firestore';
+import {collection, getDocs, getFirestore, query, where, doc, getDoc, addDoc, updateDoc} from 'firebase/firestore';
 
 const getDocuments =(collName, filter)=>{
     const db = getFirestore();
@@ -33,5 +33,27 @@ const getOneDocument = (collName,id) =>{
     })
     
 }
+const updateItemStock =(id,change)=>{
+    const db = getFirestore();
+    const docRef = doc(db, "items", id);
 
-export {getDocuments , getOneDocument} ;
+    getDoc(docRef).then((snapshot)=>{
+    const newStock =snapshot.data().stock + change;
+    updateDoc(docRef,{stock:newStock})
+    })
+}
+const sendPurchase =(purchase)=>{
+    console.log(purchase)
+    const db = getFirestore();
+    const collRef = collection(db,"orders");
+    return addDoc(collRef,purchase)
+    .then(res=>{
+        for(const item of purchase.items){
+        const change = item.quantity * -1;    
+        updateItemStock(item.id, change)
+        
+    } return res.id})
+    .catch(err =>{console.error(err)});
+}
+
+export {getDocuments , getOneDocument, sendPurchase} ;
